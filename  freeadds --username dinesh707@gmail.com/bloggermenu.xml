@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<Module>
+		<ModulePrefs
+			title="AdsPlanner"
+			author="dinesh707"
+			description="Testing a sample gadget"
+			author_email="foobar@mail.com"
+			height="200">
+			<Require feature="opensocial-0.7"/>
+ 			<Require feature="google.blog"/>
+		</ModulePrefs>
+
+ 		<Content type="html">
+		 <![CDATA[
+			<script type="text/javascript">
+				function getFeedUrl() {
+					// This gets the posts feed and writes it in the gadget
+ 					//document.write(VIEWFEEDS.GETPOSTSFEEDURL()); 
+ 					document.write("<a href='" + viewFeeds.getPostsFeedUrl() + "'>Subscribe to Posts<\/a>");
+				}
+				// This tells the gadget to load the function (getFeedUrl) after the blog is loaded
+				var viewFeeds = new google.Blog(getFeedUrl, window.name);  
+				
+ 			</script>
+		   
+		
+		 ]]>
+ 		</Content>
+ 		
+</Module>
